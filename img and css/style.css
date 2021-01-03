@@ -1,0 +1,232 @@
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Martel", serif;
+  background-color: #120f08;
+  margin: auto 0;
+  /* height: 900px; */
+}
+
+#mainbody {
+  /* border: black solid 3px; */
+  background-color: #778599;
+  font-family: "Martel", serif;
+  /* color: black; */
+  padding: 20px 20px;
+  /* margin: 20px 20px 20px 33px; */
+  /* width: 95%; */
+  /* height: 100%;  */
+  margin: auto 0;
+  /* margin-bottom: 0; */
+}
+
+nav {
+  background-color: #778599;
+  font-family: "Martel", serif;
+  width: 100%;
+  margin-top: 0;
+}
+
+nav h1 {
+  color: black;
+  font-size: 56px;
+  text-align: center;
+  font-family: "Martel", serif;
+  /* text-decoration: cursive; */
+}
+
+h2 {
+  text-align: center;
+  font-size: 44px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  font-family: "Martel", serif;
+}
+
+h4 {
+  text-align: center;
+  font-family: "Martel", serif;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+/* center images */
+.img-container {
+  display: flex;
+  margin-top: 65px;
+  margin-left: 15px;
+}
+
+/* center a tag under image */
+.img-container a {
+  display: inline-block;
+  text-decoration: none;
+  color: #778599;
+}
+
+/* change color of a tag when hovered over */
+.img-container a:hover {
+  color: #705d8f;
+  transform: scale(1.1);
+}
+
+.img1 {
+  padding-left: 25px;
+  padding-right: 15px;
+  width: 95%;
+}
+.img2 {
+  padding-right: 15px;
+  width: 95%;
+}
+
+/* form html styling */
+h3 {
+  padding-top: 10px;
+  font-size: 20px;
+  /* text-align: center; */
+  font-family: "Martel", serif;
+}
+
+p {
+  text-align: center;
+  font-size: 32px;
+  font-family: "Martel", serif;
+}
+
+#vendor-email-input {
+  width: 60%;
+}
+#description-input {
+  height: 70px;
+  width: 100%;
+}
+
+hr {
+  color: black;
+  width: 100%;
+  size: 20px;
+}
+
+/* map html styling */
+#mapid {
+  /* float: right; */
+  height: 400px;
+  width: 45%;
+  padding: 20px;
+  /* border: black solid 1px; */
+  /* border-radiius: 5px; */
+  /* margin: 10px; */
+}
+
+/* #textforlist {
+  border: solid black 1px;
+  padding: 20px;
+  margin: 10px;
+  float: left;
+  height: 400px;
+  width: 40%;
+} */
+
+/* .rental {
+  padding: 20px 20px;
+  height: 300px;
+  width: 400px;
+  margin: 10px 200px 10px 225px;
+} */
+
+/* .venueF {
+  padding: 20px 20px;
+  height: 300px;
+  width: 400px;
+  margin: 10px 200px 10px 225px;
+  float: left;
+} */
+input {
+  border-radius: 7px;
+}
+
+#venue-name-input,
+#address-input {
+  width: 95%;
+}
+
+#stateform {
+  padding: 0px 300px 0px 300px;
+}
+
+#click-button {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-color: #325ea8;
+}
+
+.sidenav {
+  display: none;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #515454;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.main-nav-h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: -60px;
+  position: relative;
+  z-index: 3;
+  font-family: "Martel", serif;
+}
+
+/* @media (min-width: 100px) {
+  #img-container {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  } */
+/* } */
+li {
+  color: black;
+}
+
+/* @media (min-width: 500px) {
+  /* #img-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-gap: 10px;
+  } */
+/* } */
