@@ -1,7 +1,9 @@
 //_______________________________ADD VENDOR TO FIREBASE_______________________________________________________________________________________________________________
 //VARIABLES USED TO STORE VENDOR INFO: This will be used to save text entered on the venue page html by the venue owner.
 var storageRef;
+// var vendorDatabase;
 var venueName;
+var vendorImage;
 var vendorAddress;
 var vendorZip;
 var vendorCapacity;
@@ -13,15 +15,16 @@ var vendorLongitude;
 var vendorLatitude;
 
 // Initialize Firebase
-var config = {
+var firebaseConfig = {
   apiKey: "AIzaSyAtDIitolx33OIPaqziRfVfvWYWS0MY5Ik",
   authDomain: "group-project-1-2127f.firebaseapp.com",
   databaseURL: "https://group-project-1-2127f.firebaseio.com",
   projectId: "group-project-1-2127f",
   storageBucket: "group-project-1-2127f.appspot.com",
   messagingSenderId: "525088904938",
+  appId: "1:525088904938:web:e8b273fa09c7479b58a993",
 };
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 
 // Get a reference to the database service
 var database = firebase.database();
@@ -61,9 +64,9 @@ $("#click-button").on("click", function (event) {
 
 //______________________________LEAFLET VARIABLES______________________________________________________________________________________________
 //MAP OBJECT: Used to render the initial map of NYC.
-var iniitalLong = 40.77;
-var iniitalLat = -73.99;
-var map = L.map("mapid").setView([iniitalLong, iniitalLat], 12);
+// var iniitalLong = 40.77;
+// var iniitalLat = -73.99;
+var map = L.map("mapid").setView([40.77, -73.99], 12);
 
 //ACCESS TOKEN: This is what will be used by the Ajax call to retrive the lat/long for the user entered zip code.
 var accessToken =
@@ -71,12 +74,16 @@ var accessToken =
 
 //LEAFLET METHOD FOR MAP DISPLAY: This uses the map object mentioned above in the method addTo(map).
 L.tileLayer(
-  "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=" +
-    accessToken,
+  "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
   {
     attribution:
-      'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    id: "mapbox.streets",
+      'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: "mapbox/streets-v11",
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken:
+      "sk.eyJ1IjoibXNoaXdyYXRhbjg4IiwiYSI6ImNqb2Ywc2g2NzAydHcza2xqNzMyMXE1N3gifQ.245Qhtto4LSUwvYByTpZmg",
   }
 ).addTo(map);
 
