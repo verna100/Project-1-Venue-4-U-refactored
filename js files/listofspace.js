@@ -1,9 +1,7 @@
 //_______________________________ADD VENDOR TO FIREBASE_______________________________________________________________________________________________________________
 //VARIABLES USED TO STORE VENDOR INFO: This will be used to save text entered on the venue page html by the venue owner.
 var storageRef;
-// var vendorDatabase;
 var venueName;
-var vendorImage;
 var vendorAddress;
 var vendorZip;
 var vendorCapacity;
@@ -178,7 +176,7 @@ function renderMap() {
 
             //Display venue details on the page below map.
             var data = $("<ul>").html(
-              `<img src="${vendorImage}" />
+              `<img src="${vendorImage}"/>
               <li>Venue Name:  ${venueName}</li>
               <li>Address: ${vendorAddress}</li>
               <li>Zip:  ${vendorZip}</li>
@@ -193,7 +191,11 @@ function renderMap() {
         //Console display of there are no matches to the entered zip code
         if (vendorZip !== firebaseZipCode) {
           console.log("No zip code match found");
-          // $("#container").append("No venue match found within the zip code " + firebaseZipCode + ". Please try another zip code.");
+          // $("#container").append(
+          //   "No venue match found within the zip code " +
+          //     firebaseZipCode +
+          //     ". Please try another zip code."
+          // );
         }
       });
     });
