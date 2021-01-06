@@ -109,13 +109,13 @@ hr {
 
 /* map html styling */
 #mapid {
-  /* float: right; */
+  float: right;
   height: 400px;
   width: 45%;
   padding: 20px;
-  /* border: black solid 1px; */
-  /* border-radiius: 5px; */
-  /* margin: 10px; */
+  border: black solid 1px;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 /* #textforlist {
@@ -158,6 +158,7 @@ input {
   margin-top: 20px;
   margin-bottom: 30px;
   background-color: #325ea8;
+  color: white;
 }
 
 .sidenav {

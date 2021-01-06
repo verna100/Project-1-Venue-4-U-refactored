@@ -101,7 +101,7 @@ $("#click-button").on("click", function (event) {
 
 // // 3. Create Firebase event for adding vendor to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function (snapshot) {
-  console.log(snapshot.val());
+  // console.log(snapshot.val());
 
   var venueName = snapshot.val().name;
   var vendorAddress = snapshot.val().location;
@@ -110,7 +110,7 @@ database.ref().on("child_added", function (snapshot) {
   var vendorDetail = snapshot.val().description;
   var vendorEmail = snapshot.val().email;
   var imageUrl = snapshot.val();
-  // console.log(imageUrl);
+  console.log(imageUrl);
 });
 
 //   get Elements------THIS IS THE WORKING CODE FOR THE PHOTO UPLOAD----------------
@@ -158,7 +158,7 @@ fileButton.addEventListener("change", function (e) {
       uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
         console.log("File available at", downloadURL);
         newVendor.imageUrl = downloadURL;
-        // console.log(newVendor.imageUrl);
+        console.log(newVendor.imageUrl);
       });
     }
   );

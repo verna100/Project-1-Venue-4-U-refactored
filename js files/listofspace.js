@@ -207,7 +207,7 @@ renderMap();
 
 var data = $("<ul>").html(
   `
-  <img src="${vendorImage}" />
+  <img src="${vendorImage}" /><br>
   <li><strong>Venue Name:</strong>  ${venueName}</li><br>
   <li><strong>Address:</strong>  ${vendorAddress}</li><br>
   <li><strong>Zip Code:</strong>  ${vendorZip}</li><br>
