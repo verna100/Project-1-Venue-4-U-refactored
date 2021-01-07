@@ -103,11 +103,11 @@
         <h3 class="contactUsH2">Address</h3>
         <input type="text" id="address-input" required="required" />
 
-        <div id="home-main-nave">
+        <div id="home-main-nav">
           <div class="uk-grid-small" uk-grid>
             <div class="uk-width-1-4@s">
               <h3 class="contactUsH2">Zip Code</h3>
-              <input type="number" id="zip-input" required="required" />
+              <input type="text" id="zip-input" required="required" />
             </div>
 
             <div class="uk-width-1-2@s">
@@ -117,26 +117,26 @@
 
             <div class="uk-width-1-4@s">
               <h3 class="contactUsH2">Maxium # of People Allowed</h3>
-              <input
-                type="number"
-                id="capacity-input"
-                placeholder="Max People"
-                required="required"
-              />
+              <input type="number" id="capacity-input" required="required" />
             </div>
           </div>
 
           <h3 class="contactUsH2">Upload Venue Photo</h3>
 
           <!-- changed this code to coincide w/the upload photo JS -->
-          <progress value="0" max="100" id="uploader">0</progress>
-          <input type="file" value="upload" id="fileButton" />
+          <progress value="0" max="100" id="uploader"></progress>
+          <input type="file" value=" " id="fileButton" />
 
           <h3 class="contactUsH2">Describe the Venue</h3>
           <input type="text" id="description-input" required="required" />
         </div>
 
-        <input type="submit" uk-toggle="target: #my-id" id="click-button" />
+        <input
+          type="submit"
+          uk-toggle="target: #my-id"
+          id="click-button"
+          onclick="reset()"
+        />
         <!-- This is a button toggling the modal -->
 
         <div id="my-id" uk-modal>

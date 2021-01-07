@@ -145,9 +145,26 @@ input {
   border-radius: 7px;
 }
 
+li {
+  color: black;
+}
+
 #venue-name-input,
 #address-input {
   width: 95%;
+}
+
+#home-main-nav {
+  margin-top: 50px;
+}
+
+ul img {
+  width: 600px;
+  height: 400px;
+}
+
+.venuesLocation {
+  color: #e0dcce;
 }
 
 #stateform {
@@ -212,22 +229,19 @@ input {
   font-family: "Martel", serif;
 }
 
-/* @media (min-width: 100px) {
+@media (min-width: 100px) {
   #img-container {
     display: flex;
     padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
-  } */
-/* } */
-li {
-  color: black;
+  }
 }
 
-/* @media (min-width: 500px) {
-  /* #img-container {
+@media (min-width: 500px) {
+  #img-container {
     display: grid;
     grid-template-columns: 2fr 2fr;
     grid-gap: 10px;
-  } */
-/* } */
+  }
+}

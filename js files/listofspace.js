@@ -100,7 +100,7 @@ function renderMap() {
 
     //User entered zipcode is saved in the following variable and console.logged
     var firebaseZipCode = $("#zipCodeInput").val().trim();
-    console.log("Zip Code Entered: " + firebaseZipCode);
+    // console.log("Zip Code Entered: " + firebaseZipCode);
 
     //Clear current content on the page from prior zip code search
     $("#container").html("");
@@ -156,8 +156,8 @@ function renderMap() {
             L.marker([vendorLatitude, vendorLongitude])
               .addTo(map)
               .bindPopup(venueName); //1.Map marker will be displayed on the page with popup
-            console.log(vendorLongitude); //2.Colsole log the Long for for the vendor found
-            console.log(vendorLatitude); //3.Colsole log the Lat for for the vendor found
+            // console.log(vendorLongitude); //2.Console log the Long for for the vendor found
+            // console.log(vendorLatitude); //3.Console log the Lat for for the vendor found
 
             var mapZoom = 15; //4.Specify the map zoom and store in variable
             map.setView([mapLatitude, mapLongitude], mapZoom); //5.Use Leaflet map method to create mymap variable (where lat, long and zoom is used)
@@ -165,14 +165,14 @@ function renderMap() {
 
             //Console display if there is a zip code match
             countZipCodeMatch++;
-            // $("#venue-count").text(countZipCodeMatch);
-            console.log(
-              "SEARCH RESULTS: " +
-                countZipCodeMatch +
-                " found around zip code " +
-                firebaseZipCode +
-                "."
-            );
+            $("#venue-count").text(countZipCodeMatch);
+            // console.log(
+            //   "SEARCH RESULTS: " +
+            //     countZipCodeMatch +
+            //     " found around zip code " +
+            //     firebaseZipCode +
+            //     "."
+            // );
 
             //Display venue details on the page below map.
             var data = $("<ul>").html(
@@ -190,12 +190,12 @@ function renderMap() {
 
         //Console display of there are no matches to the entered zip code
         if (vendorZip !== firebaseZipCode) {
-          console.log("No zip code match found");
-          // $("#container").append(
-          //   "No venue match found within the zip code " +
-          //     firebaseZipCode +
-          //     ". Please try another zip code."
-          // );
+          // console.log("No zip code match found");
+          $("#container").append(
+            "No venue match found within the zip code " +
+              firebaseZipCode +
+              ". Please try another zip code."
+          );
         }
       });
     });
