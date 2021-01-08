@@ -110,7 +110,7 @@ database.ref().on("child_added", function (snapshot) {
   var vendorDetail = snapshot.val().description;
   var vendorEmail = snapshot.val().email;
   var imageUrl = snapshot.val();
-  console.log(imageUrl);
+  // console.log(imageUrl);
 });
 
 //   get Elements------THIS IS THE WORKING CODE FOR THE PHOTO UPLOAD----------------

@@ -96,14 +96,11 @@ function renderMap() {
   $("#zipCodeSubmit").on("click", function (event) {
     event.preventDefault();
 
-    var countZipCodeMatch = 0;
+    // var countZipCodeMatch = 0;
 
     //User entered zipcode is saved in the following variable and console.logged
     var firebaseZipCode = $("#zipCodeInput").val().trim();
     // console.log("Zip Code Entered: " + firebaseZipCode);
-
-    //Clear current content on the page from prior zip code search
-    $("#container").html("");
 
     //FUNCTION TO ACCESS FIREBASE: This function will use the snapshot method to first obtains all object keys, then check Firebase for a zip code that matches then
     //set the mapLongitude and mapLatitude values.
@@ -164,8 +161,8 @@ function renderMap() {
             L.circle([mapLatitude, mapLongitude], { radius: 500 }).addTo(map); //6.Use Leaflet circle method to highlight radius around the venue location
 
             //Console display if there is a zip code match
-            countZipCodeMatch++;
-            $("#venue-count").text(countZipCodeMatch);
+            // countZipCodeMatch++;
+            // $("#venue-count").text(countZipCodeMatch);
             // console.log(
             //   "SEARCH RESULTS: " +
             //     countZipCodeMatch +
@@ -174,7 +171,7 @@ function renderMap() {
             //     "."
             // );
 
-            //Display venue details on the page below map.
+            // //Display venue details on the page below map.
             var data = $("<ul>").html(
               `<img src="${vendorImage}"/>
               <li>Venue Name:  ${venueName}</li>
@@ -190,29 +187,34 @@ function renderMap() {
 
         //Console display of there are no matches to the entered zip code
         if (vendorZip !== firebaseZipCode) {
-          // console.log("No zip code match found");
-          $("#container").append(
-            "No venue match found within the zip code " +
-              firebaseZipCode +
-              ". Please try another zip code."
-          );
+          console.log("No zip code match found");
+          // $(".venuesLocation").append(
+          //   "No venue match found within the zip code " +
+          //     firebaseZipCode +
+          //     ". Please try another zip code."
+          // );
         }
       });
     });
   });
 }
 
+//Clear current content on the page from prior zip code search
+$("#container").html("");
+
 //CALL RENDER MAP FUNCTION
 renderMap();
 
-var data = $("<ul>").html(
-  `
-  <img src="${vendorImage}" /><br>
-  <li><strong>Venue Name:</strong>  ${venueName}</li><br>
-  <li><strong>Address:</strong>  ${vendorAddress}</li><br>
-  <li><strong>Zip Code:</strong>  ${vendorZip}</li><br>
-  <li><strong>Maximum Capacity:</strong>  ${vendorCapacity}</li><br>
-  <li><strong>Venue Description:</strong> ${vendorDetail}</li><br>
-  <li><strong>Email:</strong>  ${vendorEmail}</li>`
-);
-$("#container").append(data);
+document.getElementById("zipCodeSubmit").value = "";
+
+// var data = $("<ul>").html(
+//   `
+//   <img src="${vendorImage}" /><br>
+//   <li><strong>Venue Name:</strong>  ${venueName}</li><br>
+//   <li><strong>Address:</strong>  ${vendorAddress}</li><br>
+//   <li><strong>Zip Code:</strong>  ${vendorZip}</li><br>
+//   <li><strong>Maximum Capacity:</strong>  ${vendorCapacity}</li><br>
+//   <li><strong>Venue Description:</strong> ${vendorDetail}</li><br>
+//   <li><strong>Email:</strong>  ${vendorEmail}</li>`
+// );
+// $("#container").append(data);
